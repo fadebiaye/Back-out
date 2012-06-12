@@ -1,0 +1,63 @@
+
+# GSUB 
+
+
+lookup aaltAccessAllAlternatesinLatinl {
+  lookupflag 0;
+    sub \E by \alt.e ;
+    sub \K by \alt.k ;
+    sub \N by \alt.n ;
+    sub \R by \alt.r ;
+    sub \S by \alt.s ;
+    sub \P by \alt.p ;
+    sub \Y by \alt.y ;
+} aaltAccessAllAlternatesinLatinl;
+
+lookup caltContextualAlternates {
+  lookupflag 0;
+    sub \E by \alt.e ;    
+    sub \K by \alt.k ;
+    sub \N by \alt.n ;
+    sub \R by \alt.r ;
+    sub \S by \alt.s ;
+    sub \P by \alt.p ;
+    sub \Y by \alt.y ;
+} caltContextualAlternates;
+
+lookup dligDiscretionaryLigatures {
+  lookupflag 0;
+    sub \v \t \f  by \v_t_f;
+    sub \V \T \F  by \v_t_f;
+    sub \v \T \F  by \v_t_f;
+    sub \V \t \F  by \v_t_f;
+    sub \V \t \f  by \v_t_f;
+    sub \v \T \f  by \v_t_f;
+    sub \v \t \F  by \v_t_f;
+    sub \T \V  by \t_v;
+    sub \U \T  by \u_t;
+    sub \M \X  by \m_x;
+    sub \A \V  by \a_v;
+    sub \A \X  by \a_x;
+} dligDiscretionaryLigatures;
+
+feature aalt {
+
+  script latn;
+     language dflt ;
+      lookup aaltAccessAllAlternatesinLatinl;
+} aalt;
+
+feature calt {
+
+  script latn;
+     language dflt ;
+      lookup caltContextualAlternates;
+} calt;
+
+feature dlig {
+
+  script latn;
+     language dflt ;
+      lookup dligDiscretionaryLigatures;
+} dlig;
+
